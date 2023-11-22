@@ -1,10 +1,9 @@
 import React from "react";
-import NewCard from "./NewCard";
+import Card from "./Card";
 import { useContext, useState } from "react";
 import { DarkContext } from "../index";
-import Modal from "./Modal";
 import { useInView } from "react-intersection-observer";
-import cards from './cardsData';
+import cards from "./cardsData";
 
 function Portfolio() {
   const { darkMode, setDarkMode } = useContext(DarkContext);
@@ -25,14 +24,12 @@ function Portfolio() {
     threshold: 0.2, // 10% of the component is visible
   });
 
-
-
   return (
-    <div className={darkMode ? "dark" : ""} id="portfolio">
-      <div className="bg-white dark:bg-gray-800 text-center py-20">
+    <div className={!darkMode ? "dark" : ""} id="portfolio">
+      <div className="bg-white dark:bg-gray-800 text-center py-20 ">
         <h1
           ref={h1Ref}
-          className={`text-5xl text-left px-20 text-pink-700 font-medium md:text-6xl ${
+          className={`text-5xl mobile:text-3xl text-left px-20 text-pink-700 font-medium md:text-6xl sm:text-3xl sm:mt-10 ${
             h1InView ? "animate-fadeUpIn-h1" : ""
           }`}
         >
@@ -41,23 +38,24 @@ function Portfolio() {
 
         <h2
           ref={h2Ref}
-          className={`mt-5 text-xl text-left px-20 text-zinc-600 dark:text-slate-200 font-medium md:text-x ${
+          className={`mt-5 sm:mt-1 text-xl mobile:text-base text-left px-20 text-zinc-600 dark:text-slate-200 font-medium sm:text-lg ${
             h2InView ? "animate-fadeUpIn-h2" : ""
           }`}
         >
-          Discover my diverse portfolio, showcasing BackEnd development, Fronted
-          development, web development, design, and digital art.
+          Discover my diverse portfolio, showcasing BackEnd development and
+          Fronted development.
           <br /> Explore my creative journey and reach out for collaborations.
         </h2>
         <div className="flex flex-col gap-10 py-10 px-20 lg:flex-row lg:flex-wrap">
           {cards.map((card, index) => (
-            <NewCard
+            <Card
               key={index}
               title={card.title}
               subtitle={card.subtitle}
               description={card.description}
               images={card.images}
               usedTools={card.usedTools}
+              sourceCode={card.sourceCode}
             />
           ))}
         </div>

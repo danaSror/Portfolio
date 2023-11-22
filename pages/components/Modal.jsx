@@ -1,76 +1,141 @@
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useState, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { XIcon } from "@heroicons/react/outline";
+import { AiFillGithub } from "react-icons/ai";
+import { SiGooglecolab } from "react-icons/si";
+import { DarkContext } from "../index";
 
-
-function ModalComponent({ title, description, closeModal }) {
+function Modal({
+  title,
+  subtitle,
+  description,
+  images,
+  usedTools,
+  sourceCode,
+  closeModal,
+}) {
+  const { darkMode, setDarkMode } = useContext(DarkContext);
   const [open, setOpen] = useState(true);
-
-  const cancelButtonRef = useRef(null);
+  const isVideo =
+    images && images.some((src) => src.toLowerCase().endsWith(".mp4"));
+  const videoSrc = images.find((src) => src.toLowerCase().endsWith(".mp4"));
+  const isUrlContainsGit = sourceCode.includes("git");
+  const isUrlContainsLink = description.includes("http");
 
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
-        className="relative z-10"
-        initialFocus={cancelButtonRef}
-        onClose={setOpen}
+        className="fixed inset-0 z-10 overflow-y-auto"
+        onClose={closeModal}
       >
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-rose-100 bg-opacity-75 transition-opacity" />
-        </Transition.Child>
-
-        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+        <div className={!darkMode ? "dark" : ""}>
+          <div className="flex items-center justify-center min-h-screen">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
-              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              enterTo="opacity-100 translate-y-0 sm:scale-100"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
               leave="ease-in duration-200"
-              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg w-3/4 h-3/4">
-                <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                  <div className="sm:flex sm:items-start">
-                    <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                      <Dialog.Title
-                        as="h3"
-                        className="text-base font-semibold leading-6 text-gray-900"
-                      >
-                        {title}
-                      </Dialog.Title>
-                      <div className="mt-2">
-                        <p className="text-sm text-gray-500">{description}</p>
-                      </div>
-                    </div>
+              <div className="bg-rose-100 bg-opacity-75 absolute inset-0" />
+            </Transition.Child>
+
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <div className="modal max-w-[1000px] max-h[400px] mx-auto z-10 p-7 bg-white border-black border-4 rounded-lg shadow-xl dark:bg-gray-800 dark:border-white dark:text-white">
+                <div className="flex justify-between items-center mb-4">
+                  <div className="flex gap-10 ">
+                    <Dialog.Title className="text-4xl font-bold">
+                      {title}
+                    </Dialog.Title>
+                  </div>
+                  <div>
+                    <button
+                      className="text-2xl text-gray-900"
+                      onClick={closeModal}
+                    >
+                      <XIcon className="w-6 h-6 justify-end dark:text-white" />
+                    </button>
                   </div>
                 </div>
-                <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                  <button
-                    type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
-                    onClick={closeModal}
+                <h2 className="text-xl text-gray-500 mt-2 dark:text-rose-100">
+                  {subtitle}{" "}
+                </h2>
+                <p className="text-sm text-gray-700 pr-6 mt-3 relative flex justify-end gap-3">
+                  <span className="absolute h-2 rounded-md bg-pink-700 w-40 top-0 left-0"></span>
+                </p>
+
+                <p className="text-gray-500 mt-7 dark:text-white">
+                  {isUrlContainsLink ? (
+                    <a
+                      className="animate-pulse text-pink-700 dark:text-white hover:cursor-pointer inline-block after:content-['→'] after:text-lg after:font-extrabold after:ml-2 after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 hover:after:ml-3"
+                      href={description}
+                    >
+                      Link to the game
+                    </a>
+                  ) : (
+                    description
+                  )}
+                </p>
+                <p className="dark:text-red-100">
+                  <span className="font-bold">Tools:{"  "}</span>
+                  {usedTools.map((tool, index) =>
+                    index === usedTools.length - 1 ? tool : tool + " | "
+                  )}
+                </p>
+
+                {isVideo ? (
+                  <div className="mx-auto p-5 w-3/5">
+                    <video autoPlay controls className="rounded-xl">
+                      <source src={videoSrc} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                ) : (
+                  <div className="mx-auto p-5 max-w-lg h-auto">
+                    <Carousel
+                      showStatus={false}
+                      showThumbs={false}
+                      infiniteLoop={true}
+                      autoPlay={true}
+                      interval={2000}
+                    >
+                      {images.map((image, index) => (
+                        <div key={index}>
+                          <img
+                            src={image}
+                            alt={`Image ${index}`}
+                            className="rounded-xl"
+                          />
+                        </div>
+                      ))}
+                    </Carousel>{" "}
+                  </div>
+                )}
+                <div className="flex justify-end gap-3 text-right">
+                  <p className="font-bold mt-1">Source code</p>
+                  <a
+                    href={sourceCode}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cursor-pointer text-3xl"
                   >
-                    Deactivate
-                  </button>
-                  <button
-                    type="button"
-                    className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                    onClick={closeModal}
-                  >
-                    Cancel
-                  </button>
+                    {isUrlContainsGit ? <AiFillGithub /> : <SiGooglecolab />}
+                  </a>
                 </div>
-              </Dialog.Panel>
+              </div>
             </Transition.Child>
           </div>
         </div>
@@ -79,4 +144,4 @@ function ModalComponent({ title, description, closeModal }) {
   );
 }
 
-export default ModalComponent;
+export default Modal;

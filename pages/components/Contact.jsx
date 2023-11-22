@@ -6,17 +6,17 @@ import { useContext } from "react";
 import { DarkContext } from "../index";
 
 
-function Contant() {
+function Contact() {
     const { darkMode, setDarkMode } = useContext(DarkContext);
     
     return (
-        <div className={darkMode ? "dark" : ""} id="contant">
-        <main className="bg-white px-10 h-screen md:text-center dark:bg-gray-800 dark:text-white flex flex-col justify-center">
+        <div className={!darkMode ? "dark" : ""} id="contact">
+        <main className="bg-white px-10 h-screen text-center dark:bg-gray-800 dark:text-white flex flex-col justify-center">
           <div>
-            <h1 className="animate-pulse text-2xl  py-20 text-pink-700 md:text-3xl  dark:text-red-100">Let`s keep in touch and collaborate together.</h1>
+            <h1 className="animate-pulse sm:text-2xl  py-20 text-pink-700 text-3xl mobile:text-2xl dark:text-red-100">Let`s keep in touch and collaborate together.</h1>
           </div>
           
-          <div className="text-7xl text-pink-700 flex justify-center gap-16 dark:text-white">
+          <div className="text-7xl mobile:text-4xl sm:text-5xl text-pink-700 flex justify-center gap-16 dark:text-white">
                 <a
             href="https://www.linkedin.com/in/dana-sror/"
             target="_blank"
@@ -53,4 +53,4 @@ function Contant() {
     );
 }
 
-export default Contant;
+export default Contact;

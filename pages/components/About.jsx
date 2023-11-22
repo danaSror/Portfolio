@@ -5,21 +5,20 @@ import { DarkContext } from "../index";
 
 function About() {
   const { darkMode, setDarkMode } = useContext(DarkContext);
-  
 
   return (
-    <div className={darkMode ? "dark" : ""} id="home">
-      <main className="h-screen bg-white px-10 md:text-center  dark:bg-gray-800">
-        <div className="flex items-center justify-center h-screen ">
-          <section className="flex flex-col gap-10 md:flex-row ">
-            <div className="md:w-1/2 text-left px-10 ">
-              <h2 className="text-5xl py-2 text-pink-700 font-medium md:text-6xl max-w-xl ">
+    <div className={!darkMode ? "dark" : ""} id="home">
+      <main className="h-screen bg-white px-10 text-center  dark:bg-gray-800">
+        <div className="flex  items-center justify-center h-screen ">
+          <section className="flex flex-col gap-10 md:gap-3 sm:gap-3 md:flex-row px-10 lg:mt-64 md:mt-32 sm:mt-96 sm:px-2 ">
+            <div className="lg:w-1/2 md:w-1/2 text-left lg:px-10 mobile:px-3 md:px-2 ">
+              <h2 className="lg:text-6xl py-2 text-pink-700 font-medium max-w-xl md:text-4xl sm:text-3xl mobile:text-3xl">
                 Dana Sror
               </h2>
-              <h3 className="text-2xl py-2 md:text-3xl dark:text-red-100">
+              <h3 className="lg:text-3xl py-2 md:text-2xl sm:text-xl mobile:text-xl  dark:text-red-100 ">
                 Full-Stack Engineer
               </h3>
-              <p className="text-md py-5 leading-8 text-gray-800 md:text-xl dark:text-white">
+              <p className="lg:text-xl py-5 md:py-2 mobile:py-2 leading-8 text-gray-800 sm:text-lg mobile:text-lg dark:text-white">
                 I`m passionate about both backend and frontend development,
                 turning ideas into tangible products. I love learning new
                 technologies and excel at creating efficient backend solutions.
@@ -27,7 +26,7 @@ function About() {
                 excellence.
               </p>
               <br />
-              <p className="text-xl  text-gray-800 dark:text-white">
+              <p className="lg:text-2xl  text-gray-800 mobile:py-1 md:text-xl sm:text-lg mobile:text-lg dark:text-white">
                 Let`s collaborate to bring your ideas to
                 <span className="animate-pulse text-xl  text-yellow-500">
                   {" "}
@@ -37,12 +36,11 @@ function About() {
               </p>
             </div>
 
-            <div className="md:w-1/2 relative mx-auto  hover:rotate-12">
-              {/* <Image src={avatar} layout="fill" objectFit="cover" /> */}
+            <div className="md:w-1/2 sm:w-4/5 relative mx-auto lg:mt-1 sm:mb-80 lg:px-10">
               <Image
                 src={pic}
                 alt=""
-                class="rounded-3xl shadow-2xl"
+                class="rounded-3xl shadow-2xl dark:shadow-white dark:shadow-2xl"
                 width={650}
                 height={150}
               />

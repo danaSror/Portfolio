@@ -1,10 +1,7 @@
 import Head from 'next/head'
 import Navigation from './components/Navigation';
 import About from './components/About';
-import Projects from './components/Projects';
-import Cards from './components/Cards';
 import Contact from './components/Contact';
-import Card2 from './components/card2';
 import Portfolio from './components/Portfolio';
 
 import { useState, createContext , useContext } from "react";
@@ -24,10 +21,7 @@ export default function Home() {
       <main>
         <Navigation/>
         <About/>
-        {/* <Projects/> */}
-        {/* <Cards/> */}
         <Portfolio/>
-        {/* <Card2/> */}
         <Contact/>
       </main>
     </DarkContext.Provider>
