@@ -1,7 +1,7 @@
 import Image from "next/image";
 import pic from "../../public/black.gif";
 import { useContext } from "react";
-import { DarkContext } from "../index";
+import { DarkContext} from "../index";
 
 function About() {
   const { darkMode, setDarkMode } = useContext(DarkContext);
@@ -36,11 +36,10 @@ function About() {
               </p>
             </div>
 
-            <div className="md:w-1/2 sm:w-4/5 relative mx-auto lg:mt-1 sm:mb-80 lg:px-10">
+            <div className="md:w-1/2 sm:w-4/5 relative mx-auto lg:mt-1 sm:mb-80 lg:px-10 rounded-3xl sm:rounded-3xl md:rounded-3xl mobile:rounded-3xl shadow-2xl bg-slate-950 dark:shadow-white dark:shadow-2xl">
               <Image
                 src={pic}
                 alt=""
-                class="rounded-3xl shadow-2xl dark:shadow-white dark:shadow-2xl"
                 width={650}
                 height={150}
               />
@@ -48,7 +47,7 @@ function About() {
           </section>
         </div>
       </main>
-    </div>
+      </div>
   );
 }
 

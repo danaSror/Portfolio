@@ -1,13 +1,26 @@
 import React from "react";
 import Card from "./Card";
-import { useContext, useState } from "react";
-import { DarkContext } from "../index";
+import { useContext, useState, useEffect } from "react";
+import { DarkContext, DarkProvider } from "../index";
 import { useInView } from "react-intersection-observer";
-import cards from "./cardsData";
+// import cards from "./cardsData";
+
 
 function Portfolio() {
   const { darkMode, setDarkMode } = useContext(DarkContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('/data.json'); 
+      const data = await response.json();
+      setCards(data);
+    };
+
+    fetchData();
+  }, []);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -60,7 +73,7 @@ function Portfolio() {
           ))}
         </div>
       </div>
-    </div>
+      </div>
   );
 }
 

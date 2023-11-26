@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { XIcon } from "@heroicons/react/outline";
 import { AiFillGithub } from "react-icons/ai";
 import { SiGooglecolab } from "react-icons/si";
-import { DarkContext } from "../index";
+import { DarkContext, DarkProvider } from "../index";
 
 function Modal({
   title,
@@ -140,7 +140,7 @@ function Modal({
           </div>
         </div>
       </Dialog>
-    </Transition.Root>
+      </Transition.Root>
   );
 }
 

@@ -1,6 +1,6 @@
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useContext } from "react";
-import { DarkContext } from "../index";
+import { DarkContext, DarkProvider  } from "../index";
 import { Link } from "react-scroll";
 
 function Navigation() {
@@ -55,7 +55,7 @@ function Navigation() {
           </div>
         </div>
       </nav>
-    </div>
+      </div>
   );
 }
 

@@ -3,13 +3,13 @@ import {AiFillGithub} from "react-icons/ai"
 import { BiLogoGmail } from "react-icons/bi"
 import { BsWhatsapp } from "react-icons/bs"
 import { useContext } from "react";
-import { DarkContext } from "../index";
+import { DarkContext, DarkProvider } from "../index";
 
 
 function Contact() {
     const { darkMode, setDarkMode } = useContext(DarkContext);
     
-    return (
+  return (
         <div className={!darkMode ? "dark" : ""} id="contact">
         <main className="bg-white px-10 h-screen text-center dark:bg-gray-800 dark:text-white flex flex-col justify-center">
           <div>
@@ -49,7 +49,7 @@ function Contact() {
           </a>
                 </div>
             </main>
-        </div>
+      </div>
     );
 }
 
