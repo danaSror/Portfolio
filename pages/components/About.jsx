@@ -38,7 +38,7 @@ function About() {
 
             <div className="mr-10 md:w-1/2 sm:w-4/5 relative  mx-auto lg:mt-1 sm:mb-80 lg:px-10 rounded-3xl sm:rounded-3xl md:rounded-3xl mobile:rounded-3xl shadow-2xl bg-neutral-950 dark:shadow-white dark:shadow-2xl">
               <Image
-                src={pic}
+                src={"https://res.cloudinary.com/dfgjujaok/image/upload/v1701173877/black_hjp7ad.gif"}
                 alt="code image"
                 width={650}
                 height={150}
