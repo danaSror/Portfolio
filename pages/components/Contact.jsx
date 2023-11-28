@@ -3,7 +3,7 @@ import {AiFillGithub} from "react-icons/ai"
 import { BiLogoGmail } from "react-icons/bi"
 import { BsWhatsapp } from "react-icons/bs"
 import { useContext } from "react";
-import { DarkContext, DarkProvider } from "../index";
+import { DarkContext } from "@/context/context";
 
 
 function Contact() {

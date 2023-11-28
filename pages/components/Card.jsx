@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useState, useContext } from "react";
-import { DarkContext, DarkProvider } from "../index";
+import { DarkContext } from "@/context/context";
 import Modal from "./Modal";
 
 function Card({ title, subtitle, description, images, usedTools, sourceCode }) {
@@ -23,7 +23,7 @@ function Card({ title, subtitle, description, images, usedTools, sourceCode }) {
           <div className="w-1/2">
             <div className="image">
               <Image
-                src={images[0]}
+                src={images?images[0]:""}
                 alt="Your Image"
                 width={1000}
                 height={1000}
@@ -44,9 +44,9 @@ function Card({ title, subtitle, description, images, usedTools, sourceCode }) {
                 <span className="absolute h-2 rounded-md bg-pink-700 w-12 top-0 left-0"></span>
               </p>
               <p className="text-lg mobile:text-sm sm:text-base text-gray-700 pr-6 mt-5">
-                {usedTools.map((tool, index) =>
+                {usedTools?usedTools.map((tool, index) =>
                   index === usedTools.length - 1 ? tool : tool + " | "
-                )}
+                ):""}
               </p>
             </div>
             <div className="text-right text-pink-700 absolute bottom-0 right-0 p-7">

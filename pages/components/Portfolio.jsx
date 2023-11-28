@@ -1,9 +1,8 @@
 import React from "react";
 import Card from "./Card";
 import { useContext, useState, useEffect } from "react";
-import { DarkContext, DarkProvider } from "../index";
+import { DarkContext } from "@/context/context";
 import { useInView } from "react-intersection-observer";
-// import cards from "./cardsData";
 
 
 function Portfolio() {

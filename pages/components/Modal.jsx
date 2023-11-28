@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { XIcon } from "@heroicons/react/outline";
 import { AiFillGithub } from "react-icons/ai";
 import { SiGooglecolab } from "react-icons/si";
-import { DarkContext, DarkProvider } from "../index";
+import { DarkContext } from "@/context/context";
 
 function Modal({
   title,
@@ -14,22 +14,23 @@ function Modal({
   images,
   usedTools,
   sourceCode,
-  closeModal,
+  closeModal ,
 }) {
   const { darkMode, setDarkMode } = useContext(DarkContext);
   const [open, setOpen] = useState(true);
   const isVideo =
     images && images.some((src) => src.toLowerCase().endsWith(".mp4"));
-  const videoSrc = images.find((src) => src.toLowerCase().endsWith(".mp4"));
-  const isUrlContainsGit = sourceCode.includes("git");
-  const isUrlContainsLink = description.includes("http");
+  const videoSrc = isVideo ? images.find((src) => src.toLowerCase().endsWith(".mp4")):"";
+  const isUrlContainsGit = sourceCode?sourceCode.includes("git"):false;
+  const isUrlContainsLink = description?description.includes("http"):false;
+  const closeFunction = () => {closeModal?closeModal():someFunction()};
 
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
         className="fixed inset-0 z-10 overflow-y-auto"
-        onClose={closeModal}
+        onClose={closeFunction}
       >
         <div className={!darkMode ? "dark" : ""}>
           <div className="flex items-center justify-center min-h-screen">
@@ -64,7 +65,7 @@ function Modal({
                   <div>
                     <button
                       className="text-2xl text-gray-900"
-                      onClick={closeModal}
+                      onClick={closeFunction}
                     >
                       <XIcon className="w-6 h-6 justify-end dark:text-white" />
                     </button>
@@ -91,9 +92,9 @@ function Modal({
                 </p>
                 <p className="dark:text-red-100">
                   <span className="font-bold">Tools:{"  "}</span>
-                  {usedTools.map((tool, index) =>
+                  {usedTools?usedTools.map((tool, index) =>
                     index === usedTools.length - 1 ? tool : tool + " | "
-                  )}
+                  ):""}
                 </p>
 
                 {isVideo ? (
@@ -112,7 +113,7 @@ function Modal({
                       autoPlay={true}
                       interval={2000}
                     >
-                      {images.map((image, index) => (
+                      {images?images.map((image, index) => (
                         <div key={index}>
                           <img
                             src={image}
@@ -120,7 +121,7 @@ function Modal({
                             className="rounded-xl"
                           />
                         </div>
-                      ))}
+                      )):""}
                     </Carousel>{" "}
                   </div>
                 )}

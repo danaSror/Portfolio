@@ -1,7 +1,7 @@
 import Image from "next/image";
 import pic from "../../public/black.gif";
 import { useContext } from "react";
-import { DarkContext} from "../index";
+import { DarkContext } from "@/context/context";
 
 function About() {
   const { darkMode, setDarkMode } = useContext(DarkContext);
