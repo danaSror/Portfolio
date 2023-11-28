@@ -58,7 +58,7 @@ function Portfolio() {
           Fronted development.
           <br /> Explore my creative journey and reach out for collaborations.
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-10 py-10 px-20  ">
+        <div className="grid grid-cols-2 md:grid-cols-2 sm:grid-cols-1 mobile:grid-cols-1 gap-10 py-10 px-20  ">
           {cards.map((card, index) => (
             <Card
               key={index}
