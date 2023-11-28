@@ -55,7 +55,7 @@ function Modal({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="modal max-w-[1000px] max-h[400px] mx-auto z-10 p-7 bg-white border-black border-4 rounded-lg shadow-xl dark:bg-gray-800 dark:border-white dark:text-white">
+              <div className="modal max-w-[1000px] max-h-screen mx-auto z-10 p-7 bg-white border-black border-4 rounded-lg shadow-xl dark:bg-gray-800 dark:border-white dark:text-white">
                 <div className="flex justify-between items-center mb-4">
                   <div className="flex gap-10 ">
                     <Dialog.Title className="text-4xl font-bold">
@@ -84,7 +84,7 @@ function Modal({
                       className="animate-pulse text-pink-700 dark:text-white hover:cursor-pointer inline-block after:content-['→'] after:text-lg after:font-extrabold after:ml-2 after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 hover:after:ml-3"
                       href={description}
                     >
-                      Link to the game
+                      Link To Live Demo
                     </a>
                   ) : (
                     description
@@ -118,7 +118,7 @@ function Modal({
                           <img
                             src={image}
                             alt={`Image ${index}`}
-                            className="rounded-xl"
+                            className="rounded-xl max-w-full max-h-64"
                           />
                         </div>
                       )):""}

@@ -108,6 +108,14 @@
     "sourceCode": "https://github.com/danaSror/Tasty-RecipesWeb-Client"
   },
   {
+    "title": "Students Grades Management App",
+    "subtitle": "",
+    "description": "https://students-grades-management-app.netlify.app/#",
+    "images": ["/studentsGrades.jpg"],
+    "usedTools": ["React", "Next.js", "Tailwind CSS", "JavaScript"],
+    "sourceCode": "https://github.com/danaSror/Students-Grades-Management-App"
+  },
+  {
     "title": "Portfolio",
     "subtitle": "",
     "description": "",
