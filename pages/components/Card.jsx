@@ -17,7 +17,7 @@ function Card({ title, subtitle, description, images, usedTools, sourceCode }) {
 
   return (
     <div className={!darkMode ? "dark" : ""}>
-      <div className="basis-1/3 flex-1 ">
+      <div className="basis-1/3 flex-1">
         <div className="flex gap-10 sm:gap-5 mobile:gap-3 h-64 justify-between shadow-2xl hover:border-pink-700 hover:shadow-inner rounded-xl border-4 border-black overflow-hidden relative dark:bg-slate-200 dark:shadow-white">
           {/* Left Image Container */}
           <div className="w-1/2">
