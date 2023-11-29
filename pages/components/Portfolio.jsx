@@ -38,10 +38,10 @@ function Portfolio() {
 
   return (
     <div className={!darkMode ? "dark" : ""} id="portfolio">
-      <div className="bg-white dark:bg-gray-800 text-center py-20 mobile:py-30 ">
+      <div className="bg-white dark:bg-gray-800 text-center py-20  ">
         <h1
           ref={h1Ref}
-          className={`text-5xl mobile:text-3xl text-left px-20 text-pink-700 font-medium md:text-6xl sm:text-3xl sm:mt-10 mobile:mt-10 ${
+          className={`text-5xl mobile:text-3xl text-left px-20 mobile:px-4 text-pink-700 font-medium md:text-6xl sm:text-3xl sm:mt-10 mobile:mt-10 ${
             h1InView ? "animate-fadeUpIn-h1" : ""
           }`}
         >
@@ -50,7 +50,7 @@ function Portfolio() {
 
         <h2
           ref={h2Ref}
-          className={`mt-5 sm:mt-1 text-xl mobile:text-base text-left px-20 text-zinc-600 dark:text-slate-200 font-medium sm:text-lg ${
+          className={`mt-5 sm:mt-1 text-xl mobile:text-base text-left px-20 mobile:px-4 text-zinc-600 dark:text-slate-200 font-medium sm:text-lg ${
             h2InView ? "animate-fadeUpIn-h2" : ""
           }`}
         >
@@ -58,7 +58,7 @@ function Portfolio() {
           Fronted development.
           <br /> Explore my creative journey and reach out for collaborations.
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-2 sm:grid-cols-1 mobile:grid-cols-1 gap-10 py-10 px-20  ">
+        <div className="grid grid-cols-2 md:grid-cols-2 sm:grid-cols-1 mobile:grid-cols-1 gap-10 py-10 px-20 mobile:px-4  ">
           {cards.map((card, index) => (
             <Card
               key={index}

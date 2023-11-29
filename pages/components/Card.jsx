@@ -34,7 +34,7 @@ function Card({ title, subtitle, description, images, usedTools, sourceCode }) {
           {/* Right Content Container */}
           <div className="w-1/2 mobile:pr-3">
             <div className="flex flex-col h-full text-left">
-              <h1 className="text-3xl mobile:text-xl md:text-xl md:mr-2 md:mt-2 font-bold mt-7 mobile:mt-3 sm:mr-3 mobile:mr-3 sm:text-xl">
+              <h1 className="text-3xl mobile:text-lg mobile:mr-2 md:text-xl md:mr-2 md:mt-2 font-bold mt-7 mobile:mt-3 sm:mr-3  sm:text-xl">
                 {title}
               </h1>
               <h2 className="text-xl md:text-base mobile:text-base text-gray-500 sm:text-base">
@@ -49,7 +49,7 @@ function Card({ title, subtitle, description, images, usedTools, sourceCode }) {
                 ):""}
               </p>
             </div>
-            <div className="text-right text-pink-700 absolute bottom-0 right-0 p-7 md:p-3 mobile:p-3 sm:p-3 mobile:text-base sm:text-base md:text-base">
+            <div className="text-right text-pink-700 absolute bottom-0 right-0 p-7 md:p-3 mobile:p-3 sm:p-3 mobile:text-sm sm:text-base md:text-base">
               <a
                 className="hover:cursor-pointer inline-block after:content-['→'] after:text-lg after:font-extrabold after:ml-2 after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 hover:after:ml-3"
                 onClick={openModal}

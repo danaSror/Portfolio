@@ -55,7 +55,7 @@
   {
     "title": "Analyze The Activities Of Party",
     "subtitle": "",
-    "description": "The goal is to analyze the activities of the party and the Knesset member over the past year through social networks or articles. But despite the attempts, the results seemed less satisfactory because of the \"dirty\" information structure of tweets. In addition, the tweets are in the Hebrew language and there are not enough models that are well trained in the Hebrew language. After this attempt, I extracted news correspondence information using the Google API but got minimal information in terms of dates because it is a limited API. But at the same time, the results seemed satisfactory and logical.",
+    "description": "The goal is to analyze the activities of the party and the Knesset member over the past year through social networks or articles.",
     "images": ["/bibi.png"],
     "usedTools": ["Python", "BertTopic", "pandas", "numpy"],
     "sourceCode": "https://github.com/danaSror/analyze-the-activities-of-party"

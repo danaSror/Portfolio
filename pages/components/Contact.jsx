@@ -16,7 +16,7 @@ function Contact() {
             <h1 className="animate-pulse sm:text-2xl  py-20 text-pink-700 text-3xl mobile:text-2xl dark:text-red-100">Let`s keep in touch and collaborate together.</h1>
           </div>
           
-          <div className="text-7xl mobile:text-4xl sm:text-5xl text-pink-700 flex justify-center gap-16 dark:text-white">
+          <div className="text-7xl mobile:text-2xl sm:text-5xl text-pink-700 flex justify-center gap-16 dark:text-white">
                 <a
             href="https://www.linkedin.com/in/dana-sror/"
             target="_blank"

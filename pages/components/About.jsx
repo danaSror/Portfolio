@@ -8,9 +8,9 @@ function About() {
 
   return (
     <div className={!darkMode ? "dark" : ""} id="home">
-      <main className="h-screen bg-white px-10 text-center  dark:bg-gray-800">
+      <main className="h-screen bg-white px-10 mobile:px-2 text-center  dark:bg-gray-800">
         <div className="flex  items-center justify-center h-screen ">
-          <section className="flex flex-col gap-10 md:gap-3 sm:gap-3 mobile:gap-3 md:flex-row px-10 lg:mt-64 md:mt-48 sm:mt-64 mobile:mt-20 sm:px-2 mobile:px-2  ">
+          <section className="flex flex-col gap-10 md:gap-3 sm:gap-3 mobile:gap-3 md:flex-row px-10 lg:mt-64 md:mt-48 sm:mt-64 mobile:mt-28 sm:px-2 mobile:px-2  ">
             <div className="lg:w-1/2 md:w-1/2 text-left lg:px-10 mobile:px-3 md:px-2 ">
               <h2 className="lg:text-6xl py-2 text-pink-700 font-medium max-w-xl md:text-4xl sm:text-3xl mobile:text-3xl">
                 Dana Sror
