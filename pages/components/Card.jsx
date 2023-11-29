@@ -18,7 +18,7 @@ function Card({ title, subtitle, description, images, usedTools, sourceCode }) {
   return (
     <div className={!darkMode ? "dark" : ""}>
       <div className="basis-1/3 flex-1">
-        <div className="flex gap-10 sm:gap-5 mobile:gap-3 md:gap-3 h-64 justify-between shadow-2xl hover:border-pink-700 hover:shadow-inner rounded-xl border-4 border-black overflow-hidden relative dark:bg-slate-200 dark:shadow-white">
+        <div className="flex lg:gap-7 sm:gap-5 mobile:gap-3 md:gap-3 h-64 justify-between shadow-2xl hover:border-pink-700 hover:shadow-inner rounded-xl border-4 border-black overflow-hidden relative dark:bg-slate-200 dark:shadow-white">
           {/* Left Image Container */}
           <div className="w-1/2">
             <div className="image">
@@ -34,16 +34,16 @@ function Card({ title, subtitle, description, images, usedTools, sourceCode }) {
           {/* Right Content Container */}
           <div className="w-1/2 mobile:pr-3">
             <div className="flex flex-col h-full text-left">
-              <h1 className="text-3xl mobile:text-lg mobile:mr-2 md:text-xl md:mr-2 md:mt-2 font-bold mt-7 mobile:mt-3 sm:mr-3  sm:text-xl">
+              <h1 className="lg:text-2xl lg:mt-5 mobile:text-lg mobile:mr-2 md:text-xl md:mr-2 md:mt-2 font-bold mt-7 mobile:mt-3 sm:mr-3  sm:text-xl">
                 {title}
               </h1>
-              <h2 className="text-xl md:text-base mobile:text-base text-gray-500 sm:text-base">
+              <h2 className="lg:text-xl md:text-base mobile:text-base text-gray-500 sm:text-base">
                 {subtitle}
               </h2>
               <p className="text-sm text-gray-700 pr-6 mt-3 sm:mt-1 relative">
-                <span className="absolute h-2 md:h-1 sm:h-1 mobile:h-1 rounded-md bg-pink-700 w-12 top-0 left-0"></span>
+                <span className="absolute lg:h-2 md:h-1 sm:h-1 mobile:h-1 rounded-md bg-pink-700 w-12 top-0 left-0"></span>
               </p>
-              <p className="text-lg mobile:text-sm md:text-sm sm:text-sm text-gray-700 pr-6 mt-5 md:mt-3 sm:mt-3 mobile:mt-3">
+              <p className="lg:text-base mobile:text-sm md:text-sm sm:text-sm text-gray-700 pr-6 mt-5 md:mt-3 sm:mt-3 mobile:mt-3">
                 {usedTools?usedTools.map((tool, index) =>
                   index === usedTools.length - 1 ? tool : tool + " | "
                 ):""}
