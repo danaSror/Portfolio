@@ -34,7 +34,7 @@ function Modal({
       >
         <div className={!darkMode ? "dark" : ""}>
           <div className="flex items-center justify-center min-h-screen">
-            <Transition.Child
+            {/* <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
               enterFrom="opacity-0"
@@ -44,7 +44,7 @@ function Modal({
               leaveTo="opacity-0"
             >
               <div className="bg-rose-100 bg-opacity-75 absolute inset-0" />
-            </Transition.Child>
+            </Transition.Child> */}
 
             <Transition.Child
               as={Fragment}
