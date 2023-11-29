@@ -34,18 +34,6 @@ function Modal({
       >
         <div className={!darkMode ? "dark" : ""}>
           <div className="flex items-center justify-center min-h-screen">
-            {/* <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <div className="bg-rose-100 bg-opacity-75 absolute inset-0" />
-            </Transition.Child> */}
-
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -56,29 +44,29 @@ function Modal({
               leaveTo="opacity-0 scale-95"
             >
               <div className="modal max-w-[1000px] max-h-screen mx-auto z-10 p-7 bg-white border-black border-4 rounded-lg shadow-xl dark:bg-gray-800 dark:border-white dark:text-white">
-                <div className="flex justify-between items-center mb-4">
+                <div className="flex justify-between items-center mb-4 ">
                   <div className="flex gap-10 ">
-                    <Dialog.Title className="text-4xl font-bold">
+                    <Dialog.Title className="text-4xl font-bold mobile:text-xl">
                       {title}
                     </Dialog.Title>
                   </div>
                   <div>
                     <button
-                      className="text-2xl text-gray-900"
+                      className="text-2xl mobile:text-lg text-gray-900"
                       onClick={closeFunction}
                     >
-                      <XIcon className="w-6 h-6 justify-end dark:text-white" />
+                      <XIcon className="w-6 h-6 mobile:w-3 mobile:h-3 justify-end dark:text-white" />
                     </button>
                   </div>
                 </div>
-                <h2 className="text-xl text-gray-500 mt-2 dark:text-rose-100">
+                <h2 className="text-xl mobile:text-base text-gray-500 mt-2 dark:text-rose-100">
                   {subtitle}{" "}
                 </h2>
                 <p className="text-sm text-gray-700 pr-6 mt-3 relative flex justify-end gap-3">
-                  <span className="absolute h-2 rounded-md bg-pink-700 w-40 top-0 left-0"></span>
+                  <span className="absolute h-2 mobile:h-1 sm:h-1 rounded-md bg-pink-700 w-40 top-0 left-0"></span>
                 </p>
 
-                <p className="text-gray-500 mt-7 dark:text-white">
+                <p className="text-gray-500 mt-7 mobile:text-base mobile:mt-4 dark:text-white">
                   {isUrlContainsLink ? (
                     <a
                       className="animate-pulse text-pink-700 dark:text-white hover:cursor-pointer inline-block after:content-['→'] after:text-lg after:font-extrabold after:ml-2 after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-100 hover:after:ml-3"
@@ -90,7 +78,7 @@ function Modal({
                     description
                   )}
                 </p>
-                <p className="dark:text-red-100">
+                <p className="dark:text-red-100 mobile:text-base">
                   <span className="font-bold">Tools:{"  "}</span>
                   {usedTools?usedTools.map((tool, index) =>
                     index === usedTools.length - 1 ? tool : tool + " | "
@@ -118,20 +106,20 @@ function Modal({
                           <img
                             src={image}
                             alt={`Image ${index}`}
-                            className="rounded-xl max-w-full max-h-64"
+                            className="rounded-xl max-w-full max-h-64 mobile:max-h-48 sm:max-h-48 "
                           />
                         </div>
                       )):""}
                     </Carousel>{" "}
                   </div>
                 )}
-                <div className="flex justify-end gap-3 text-right">
+                <div className="flex justify-end gap-3 text-right mobile:text-base sm:text-base">
                   <p className="font-bold mt-1">Source code</p>
                   <a
                     href={sourceCode}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="cursor-pointer text-3xl"
+                    className="cursor-pointer text-3xl mobile:text-2xl sm:text-2xl"
                   >
                     {isUrlContainsGit ? <AiFillGithub /> : <SiGooglecolab />}
                   </a>

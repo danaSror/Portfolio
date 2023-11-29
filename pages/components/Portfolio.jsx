@@ -38,10 +38,10 @@ function Portfolio() {
 
   return (
     <div className={!darkMode ? "dark" : ""} id="portfolio">
-      <div className="bg-white dark:bg-gray-800 text-center py-20 ">
+      <div className="bg-white dark:bg-gray-800 text-center py-20 mobile:py-30 ">
         <h1
           ref={h1Ref}
-          className={`text-5xl mobile:text-3xl text-left px-20 text-pink-700 font-medium md:text-6xl sm:text-3xl sm:mt-10 ${
+          className={`text-5xl mobile:text-3xl text-left px-20 text-pink-700 font-medium md:text-6xl sm:text-3xl sm:mt-10 mobile:mt-10 ${
             h1InView ? "animate-fadeUpIn-h1" : ""
           }`}
         >
