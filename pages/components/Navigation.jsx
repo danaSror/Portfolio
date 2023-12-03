@@ -22,7 +22,7 @@ function Navigation() {
             <h1 className="text-xl mobile:text-sm font-burtons dark:text-white">DanaSror</h1>
             <BsFillMoonStarsFill
               onClick={() => setDarkMode(!darkMode)}
-              className="animate-spin cursor-pointer text-lg mobile:text-sm dark:text-white order-1 hover:animate-none hover:text-amber-400 dark:hover:text-amber-400 hover:text-2xl"
+              className="animate-spin cursor-pointer text-lg mobile:text-sm dark:text-white order-1 hover:animate-none hover:text-amber-400 dark:hover:text-amber-400 hover:text-2xl mobile:hover:text-sm"
             />
           </div>
 

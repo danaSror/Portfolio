@@ -28,12 +28,12 @@ function Portfolio() {
   // Use the useInView hook to detect when the header is in the viewport
   const [h1Ref, h1InView] = useInView({
     triggerOnce: false, // Only trigger once when it enters the viewport
-    threshold: 0.2, // 10% of the component is visible
+    threshold: 0.1, // 10% of the component is visible
   });
 
   const [h2Ref, h2InView] = useInView({
     triggerOnce: false, // Only trigger once when it enters the viewport
-    threshold: 0.2, // 10% of the component is visible
+    threshold: 0.1, // 10% of the component is visible
   });
 
   return (
@@ -41,7 +41,7 @@ function Portfolio() {
       <div className="bg-white dark:bg-gray-800 text-center py-20  ">
         <h1
           ref={h1Ref}
-          className={`text-5xl mobile:text-3xl text-left px-20 mobile:px-4 text-pink-700 font-medium md:text-6xl sm:text-3xl sm:mt-10 mobile:mt-10 ${
+          className={`text-5xl mobile:text-3xl text-left px-20 mobile:px-4 text-pink-700 font-medium md:text-6xl sm:text-3xl sm:mt-10 mobile:mt-3 ${
             h1InView ? "animate-fadeUpIn-h1" : ""
           }`}
         >

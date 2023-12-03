@@ -11,12 +11,12 @@ function Contact() {
     
   return (
         <div className={!darkMode ? "dark" : ""} id="contact">
-        <main className="bg-white px-10 h-screen text-center dark:bg-gray-800 dark:text-white flex flex-col justify-center">
+        <main className="bg-white px-10 h-36 text-center  dark:bg-gray-800 dark:text-white flex flex-col justify-center">
           <div>
-            <h1 className="animate-pulse sm:text-2xl  py-20 text-pink-700 text-3xl mobile:text-2xl dark:text-red-100">Let`s keep in touch and collaborate together.</h1>
+            <h1 className="animate-pulse sm:text-2xl  py-2 text-pink-700 lg:text-3xl mobile:text-lg dark:text-red-100">Let`s keep in touch and collaborate together.</h1>
           </div>
           
-          <div className="text-7xl mobile:text-2xl sm:text-5xl text-pink-700 flex justify-center gap-16 dark:text-white">
+          <div className="text-7xl py-5 mobile:text-2xl sm:text-5xl text-pink-700 flex justify-center gap-8 dark:text-white">
                 <a
             href="https://www.linkedin.com/in/dana-sror/"
             target="_blank"
