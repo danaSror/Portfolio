@@ -16,7 +16,7 @@ function About() {
                 Dana Sror
               </h2>
               <h3 className="lg:text-3xl py-2 md:text-2xl sm:text-xl mobile:text-xl  dark:text-red-100 ">
-                Full-Stack Engineer
+                Backend Engineer
               </h3>
               <p className="lg:text-xl py-5 md:py-2 mobile:py-2 leading-8 text-gray-800 sm:text-lg mobile:text-lg dark:text-white">
                 I`m passionate about both backend and frontend development,
