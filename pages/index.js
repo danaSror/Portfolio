@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import About from './components/About';
 import Contact from './components/Contact';
 import Portfolio from './components/Portfolio';
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
 
@@ -15,6 +16,7 @@ export default function Home() {
         <link rel="icon" href="/logo.png" />
       </Head>
       <main>
+        <Analytics/>
         <Navigation/>
         <About/>
         <Portfolio/>
